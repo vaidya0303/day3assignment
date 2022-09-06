@@ -1,48 +1,26 @@
+import java.util.Scanner;
+
 public class assignment {
 
-public static final int IS_PART_TIME= 1; 
-public static final int IS_FULL_TIME = 2;
-public static final int EMP_RATE_PER_HOUR=28; 
-public static final int NUM_OF_WORKING_DAYS=2; 
-public static final int MAX_HRS_IN_MONTH = 10;
 
+public static void main( String[] args ) {
+System.out.println("Welcome to Line Comparison Computation Program");
+Scanner sc = new Scanner(System.in);
+System.out.println("enter the first co-ordinate");
+int X1=sc.nextInt();
+int Y1=sc.nextInt();
+System.out.println("enter the second co-ordinate");
+int X2=sc.nextInt();
+int Y2=sc.nextInt();
+System.out.println("the first co-ordinate is (" +X1 +","+Y1+") ");
+System.out.println("the second co-ordinate is (" +X2 +","+Y2+") ");
+double length2;
+int point3=(X2-X1)*(X2-X1);
+int point4=(Y2-Y1)*(Y2-Y1);
+length2=Math.sqrt(point3+point4);
+System.out.println("length of the line is "+length2);
 
-public static void main (String[] args) {
-
-   // Variables 
-int empHrs = 0, totalEmpHrs=0, totalworkingDays = 8;
-
-// Computation
-
-while (totalEmpHrs <= MAX_HRS_IN_MONTH &&
- totalworkingDays < NUM_OF_WORKING_DAYS) {
-
-totalworkingDays++;
-
-int empCheck = (int) Math.floor(Math.random() * 10) % 3;
-
-switch (empCheck) {
-     case IS_PART_TIME:
-
-  empHrs = 4;
-     break;
-
-     case IS_FULL_TIME:
-         empHrs =8;
-
-     break;
-     default: 
-     empHrs = 0;
 }
 
-     totalEmpHrs += empHrs;
 
-     System.out.println("Day#:" + totalworkingDays + "Emp Hr: " +empHrs); 
 }
-     int totalEmpwage = totalEmpHrs * EMP_RATE_PER_HOUR;
-
-     System.out.println("Total Emp Wage: "+totalEmpwage);
-
-    }
- }
-
